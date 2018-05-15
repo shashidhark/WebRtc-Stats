@@ -101,3 +101,13 @@ function createUUID() {
 
   return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
 }
+
+function get_status(){
+  peerConnection.getStats().then(
+        report => {
+            report.forEach(stat => {
+              console.log(stat);
+            });
+        }
+    );
+}
